@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React with CDN</title>
+    </head>
+    <body>
+    <!-- <div id="root">
+        <h1>Welcome to the ReactJs with CDN</h1>
+    </div>
+
+    <script>
+        const message = document.createElement('h1')
+
+        message.innerHTML = 'Learning CDN'
+
+        const root = document.getElementById('root')
+
+        root.appendChild(message)
+    </script> -->
+
+    <!-- Using ReactJs CDNs -->
+    <div id="root">
+        <!-- For seeing how this HTML code looks like in the web element uncomment below tags & comment react script tags -->
+        <!-- <div id="parent">
+            <div id="child">
+                <h1 id="greeting">Welcome from React</h1>
+                <h1 id="greeting2">Welcome from React Heading</h1>
+            </div>
+        </div> -->
+    </div>
+    <script
+        crossorigin
+        src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+        crossorigin
+        src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <!-- <script>
+        //creating react elements. Which accepts 3 parameters(type(h1), props, children('welcome to ...')).
+        const message = React.createElement('h1', {}, 'Welcome to React first code')
+        //Identify the root element/ root starts from here.
+        //We are creating root element which is directly attached to the DOM.
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+
+        root.render(message)
+    </script> -->
+
+    <!-- Challenges with React CDN -->
+    <!-- what is props ? -->
+    <!-- Let's see how to building above HTML tags code in ReactJs  -->
+    <script>
+        const message = React.createElement(
+        "div",
+        { id: "parent" },
+        React.createElement("div", { id: "child" }, [
+            React.createElement("h1", { id: "greeting1" }, 'Welcome from ReactJS'),
+            React.createElement("h2", { id: "greeting2" }, 'Welcome from ReactJs Greeting'),
+        ])
+        );
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+
+        root.render(message);
+    </script>
+    <!-- Now you must be thinking why things getting complex in reactJs ? 
+        it's so complicated in ReactJS compared to HTMLML. 
+        Why can't we write it simple like HTML code. -->
+
+    <!-- Don't worry in real life we don't write ReactJs code as above. 
+        This is just an example to show how you work with CDNs. In real life we don't work with CDN's. 
+        But we work with some build tools. 
+        Better way of writing ReactJs code with HTMl that is known as JSX(JavaScript XML)-->
+    </body>
+</html>
